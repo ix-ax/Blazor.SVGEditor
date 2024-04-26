@@ -38,27 +38,14 @@
                && Definitions.TryGetValue(id, out var definition)
                && definition is LinearGradient linearGradient)
                 {
-                    var Parameters = new Dictionary<string, object> { { "SVGElement", SVGElement } };
-                    <DynamicComponent Type=@SVGElement.Presenter Parameters=Parameters />
+                    <LinearGradientEditor LinearGradient="linearGradient" EditingShape="shape" />
                 }
-                @if (!DisableScaleLabel)
-                {
-                    <foreignObject class="unselectable" x="5" y="0" height="22" width="150" style="font-size:20px;pointer-events:none;touch-action:none;">Scale 1:@(Math.Round(Scale, 3).AsString())</foreignObject>
-                }
-                @foreach (var shape in MarkedShapes)
-                {
-                    @if (shape.Fill is ['u', 'r', 'l', '(', '\'', '#', .. var id, '\'', ')']
-                   && Definitions.TryGetValue(id, out var definition)
-                   && definition is LinearGradient linearGradient)
-                    {
-                        <LinearGradientEditor LinearGradient="linearGradient" EditingShape="shape" />
-                    }
-                }
-                @if (SelectionBox is not null)
-                {
-                    <BoxScaler Box=SelectionBox />
-                }
-            </svg>
+            }
+            @if (SelectionBox is not null)
+            {
+                <BoxScaler Box=SelectionBox />
+            }
+        </svg>
     </ContextMenuTrigger>
     <ContextMenu Id="SVGMenu" @oncontextmenu:preventDefault="true">
         @if (SelectedShapes.Count == 1 && EditMode == EditMode.Add)
