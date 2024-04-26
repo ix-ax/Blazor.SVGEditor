@@ -13,8 +13,7 @@
     <PackageTags>Blazor;Wasm;Server;SVG;WYSIWYG;customizable;Path;pathdata;scaling;panning;editing;ordering</PackageTags>
     <RepositoryUrl>https://github.com/KristofferStrube/Blazor.SVGEditor</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageVersion>0.3.0</PackageVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>   
     <Authors>Kristoffer Strube</Authors>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
@@ -36,6 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="AngleSharp" Version="1.0.0" />
     <PackageReference Include="Blazor.ContextMenu" Version="1.15.0" />
     <PackageReference Include="BlazorColorPicker" Version="2.3.0" />
