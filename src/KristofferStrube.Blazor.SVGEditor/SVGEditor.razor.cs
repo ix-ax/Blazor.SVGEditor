@@ -137,7 +137,7 @@ public partial class SVGEditor : ComponentBase
                 UpdateInput();
             });
 
-        moduleTask = new(async () => await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/KristofferStrube.Blazor.SVGEditor/KristofferStrube.Blazor.SVGEditor.js"));
+        moduleTask = new(async () => await JSRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/AXOpen.KristofferStrube.Blazor.SVGEditor/KristofferStrube.Blazor.SVGEditor.js"));
     }
 
     public void UpdateInput(ISVGElement SVGElement)
